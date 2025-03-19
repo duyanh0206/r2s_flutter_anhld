@@ -1,16 +1,13 @@
 import 'dart:io';
+import 'dart:math';
 
 void main() {
 
-  void areaOfCircle() {
-    print('Enter the radius of the circle: ');
-    double radius = double.parse(stdin.readLineSync()!);
-    print('The area of the circle is ${3.14 * radius * radius}');
+  num areaOfCircle({ required num radius }) {
+    return pi * radius * radius;
   }
-  void perimeterOfCircle() {
-    print('Enter the radius of the circle: ');
-    double radius = double.parse(stdin.readLineSync()!);
-    print('The perimeter of the circle is ${2 * 3.14 * radius}');
+  num perimeterOfCircle( num radius) {
+    return 2 * pi * radius;
   }
 
   while (true) {
@@ -23,10 +20,16 @@ void main() {
 
     switch (choice) {
       case 1:
-        areaOfCircle();
+        print('Enter the radius of the circle: ');
+        num radius = num.parse(stdin.readLineSync()!);
+        print('The area of the circle is ${areaOfCircle(radius: radius)}');
+        print('The perimeter of the circle is ${perimeterOfCircle(radius)}');
         break;
       case 2:
-        perimeterOfCircle();
+        print('Enter the radius of the circle: ');
+        num radius = num.parse(stdin.readLineSync()!);
+        print('The perimeter of the circle is ${perimeterOfCircle(radius)}');
+        print('The area of the circle is ${areaOfCircle(radius: radius)}');
         break;
       case 3:
         exit(0);
